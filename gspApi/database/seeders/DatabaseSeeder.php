@@ -8,6 +8,7 @@ use App\Models\Linija;
 use App\Models\Stanica;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +27,15 @@ class DatabaseSeeder extends Seeder
 
 
         User::factory(10)->create();
+
+        User::factory(10)->create();
+        //kreiracemo ovde admina
+        $admin = new User();
+        $admin->name="Admin";
+        $admin->email="admin@gmail.com";
+        $admin->password= Hash::make("admin");
+        $admin->admin = 1;
+       $admin->save();
         $ds = new DestinacijaSeeder();
         $ds->run();
 

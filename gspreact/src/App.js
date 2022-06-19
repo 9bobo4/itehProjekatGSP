@@ -9,6 +9,8 @@ import Linije from './komponente/Linije';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Omiljene from './komponente/Omiljene';
+import LoginPage from './komponente/LoginPage';
+import RegisterPage from './komponente/RegisterPage';
 
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -17,6 +19,7 @@ function App() {
   const [brojOmiljenihLinija, setBrOmLinija] = useState(0);
  
   const [linije,setLinije] = useState([ ]);
+  const[token,setToken] = useState();
   useEffect(() => {
     const getRandomLists = async () => {
       try {
@@ -37,18 +40,8 @@ function App() {
       }
     };
     getRandomLists();
-  }, [ axiosInstance]);
-    
-    // {
-    //   id:10,
-    //   brojLinije:65,
-    //   pocetnaStanica:"Karaburma 2",
-    //   krajnjaStanica:"Paviljoni",
-    //   vreme: 42,
-    //   zona:1, 
-    //   omiljena:0
-
-    // }, 
+  }, [ axiosInstance]); 
+  
 function dodajOmiljenu(id){
     linije.forEach((l)=>{
       if(l.id==id){
@@ -71,6 +64,10 @@ function izbaciIzOmiljenih(id){
 
 
 
+function addToken(auth_token){
+  setToken(auth_token);
+}
+
 
 
   return (
@@ -78,13 +75,17 @@ function izbaciIzOmiljenih(id){
 
     <div >
       <BrowserRouter>
-        <NavBar></NavBar>
+        <NavBar token={token} ></NavBar>
         
         <Routes>
           <Route path="/" element={<Pocetna></Pocetna>} />
           <Route path="/kontakt" element={<Kontakt></Kontakt>} />
           <Route path="/linije" element={<Linije linije={linije} dodajOmiljenu={dodajOmiljenu} ></Linije>} />
           <Route path="/omiljene" element={<Omiljene linije={linije} brojOmiljenih={brojOmiljenihLinija} izbaciIzOmiljenih={izbaciIzOmiljenih}>  </Omiljene>} />
+          <Route path="/login" element={<LoginPage addToken={addToken}></LoginPage>} />
+          <Route path="/register" element={<RegisterPage></RegisterPage>} />
+          
+
         </Routes>
        
         <Footer></Footer>
