@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLinijasTable extends Migration
+class CreateTipLinijeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateLinijasTable extends Migration
      */
     public function up()
     {
-        Schema::create('linijas', function (Blueprint $table) {
+        Schema::create('tip_linijes', function (Blueprint $table) {
             $table->id();
-            $table->string('brojLinije');
-            $table->integer('vreme');
-            $table->foreignId('pocetnaDestinacija');
-            $table->foreignId('zavrsnaDestinacija');
-            $table->foreignId('tipLinije');
-
+            $table->string('naziv');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreateLinijasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('linijas');
+        Schema::dropIfExists('tip_linijes');
     }
 }

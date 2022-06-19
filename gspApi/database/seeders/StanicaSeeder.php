@@ -37,5 +37,15 @@ class StanicaSeeder extends Seeder
         $s6= new Stanica();
         $s6->nazivStanice= 'Posta';
         $s6->save();
+
+
+
+
+
+
+
+
+
+        
     }
 }

@@ -38,6 +38,30 @@ class DestinacijaSeeder extends Seeder
         $d6= new Destinacija();
         $d6->naziv="Beograd na vodi";
         $d6->save();
+
+        $d7= new Destinacija();
+        $d7->naziv="Slavija";
+        $d7->save();
+
+        $d8= new Destinacija();
+        $d8->naziv="Resnik";
+        $d8->save();
+
+        $d9= new Destinacija();
+        $d9->naziv="Pancevacki most";
+        $d9->save();
         
+        
+        $d10= new Destinacija();
+        $d10->naziv="Miljakovac 3";
+        $d10->save();
+
+        $d11= new Destinacija();
+        $d11->naziv="Banjica 2";
+        $d11->save();
+
+        $d12= new Destinacija();
+        $d12->naziv="Novi Beograd/Blok 45";
+        $d12->save();
     }
 }
