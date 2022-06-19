@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LinijaController;
+use App\Http\Controllers\PorukaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,8 +23,8 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('linije', [LinijaController::class, 'index']);
 Route::get('linije/{id}', [LinijaController::class, 'show']);
  
-
-
+Route::get('kontakt',[PorukaController::class,'index']); //samo admin moze da vidi poruke
+Route::post('kontakt', [PorukaController::class, 'primiPoruku']);   //ulogovan ili ne svako moze da nam posalje poruku
 Route::group(['middleware' => ['auth:sanctum']], function () {  //obicni ulogovani korisnici
     Route::get('/profiles', function (Request $request) { //ovo nam omogucava da prikazemo ulogovanog korisnika
         return auth()->user();
