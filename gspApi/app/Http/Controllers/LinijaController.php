@@ -42,7 +42,9 @@ class LinijaController extends Controller
             'vreme' => 'required',
             'pocetnaDestinacija' => 'required', 
             'zavrsnaDestinacija' => 'required',
-            'zona'=>'required'
+            'zona'=>'required',
+            'tipLinije'=>'required',
+
              
         ]);
 
@@ -54,6 +56,7 @@ class LinijaController extends Controller
             'pocetnaDestinacija' => $request->pocetnaDestinacija,
             'zavrsnaDestinacija' => $request->zavrsnaDestinacija,
             'zona' => $request->zona,
+            'tipLinije'=>$request->tipLinije,
 
         ]);
         $l->save();
@@ -96,7 +99,8 @@ class LinijaController extends Controller
             'vreme' => '',
             'pocetnaDestinacija' => '', 
             'zavrsnaDestinacija' => '',
-            'zona'=>''
+            'zona'=>'',
+            'tipLinije'=>''
              
         ]);
 
@@ -110,6 +114,8 @@ class LinijaController extends Controller
             $l->pocetnaDestinacija = $request->pocetnaDestinacija;
             $l->zavrsnaDestinacija = $request->zavrsnaDestinacija;
             $l->zona = $request->zona;
+            $l->tipLinije = $request->tipLinije;
+
             $l->save();
             return response()->json(['Linija uspesno izmenjena!', new LinijaResource($l)]);
         }else{

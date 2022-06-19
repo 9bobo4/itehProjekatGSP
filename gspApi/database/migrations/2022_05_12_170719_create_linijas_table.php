@@ -19,7 +19,7 @@ class CreateLinijasTable extends Migration
             $table->integer('vreme');
             $table->foreignId('pocetnaDestinacija');
             $table->foreignId('zavrsnaDestinacija');
-            $table->foreignId('tipLinije');
+            $table->foreignId('tipLinije')->default(1);
 
             $table->timestamps();
         });
