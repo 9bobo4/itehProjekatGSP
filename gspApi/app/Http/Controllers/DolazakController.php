@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\DolazakResource;
 use App\Models\Dolazak;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class DolazakController extends Controller
      */
     public function index()
     {
-        //
+        return DolazakResource::collection(  Dolazak::all());
     }
 
     /**

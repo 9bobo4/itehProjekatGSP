@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DestinacijaController;
+use App\Http\Controllers\DolazakController;
 use App\Http\Controllers\LinijaController;
 use App\Http\Controllers\PorukaController;
 use Illuminate\Http\Request;
@@ -31,6 +32,11 @@ Route::delete('linije/{id}', [LinijaController::class, 'destroy']);
 
 Route::post('linije/', [LinijaController::class, 'store']);
 Route::put('linije/{id}', [LinijaController::class, 'update']);
+
+Route::get('dolazak', [DolazakController::class, 'index']);
+
+
+
 
 Route::group(['middleware' => ['auth:sanctum']], function () {  //obicni ulogovani korisnici
     Route::get('/profiles', function (Request $request) { //ovo nam omogucava da prikazemo ulogovanog korisnika
