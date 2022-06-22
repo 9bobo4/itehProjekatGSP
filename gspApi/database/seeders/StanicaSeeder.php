@@ -35,11 +35,33 @@ class StanicaSeeder extends Seeder
         $s5->save();
 
         $s6= new Stanica();
-        $s6->nazivStanice= 'Posta';
+        $s6->nazivStanice= 'Posta Zemun';
         $s6->save();
 
 
+        $s7= new Stanica();
+        $s7->nazivStanice= 'Slavija';
+        $s7->save();
 
+        $s8= new Stanica();
+        $s8->nazivStanice= 'Usce';
+        $s8->save();
+
+        $s9= new Stanica();
+        $s9->nazivStanice= 'FON';
+        $s9->save();
+
+        $s10= new Stanica();
+        $s10->nazivStanice= 'Karadjordjev park';
+        $s10->save();
+
+        $s11= new Stanica();
+        $s11->nazivStanice= 'Bulevar oslobodjenja';
+        $s11->save();
+
+        $s12= new Stanica();
+        $s12->nazivStanice= 'Atletska dvorana';
+        $s12->save();
 
 
 

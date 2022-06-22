@@ -17,8 +17,8 @@ class CreateDolazaksTable extends Migration
             $table->id();
             $table->foreignId('linija');
             $table->foreignId('stanica');
+  
 
-            $table->timestamp('vremeDolaska');
             $table->timestamps();
         });
     }
