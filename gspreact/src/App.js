@@ -14,6 +14,7 @@ import RegisterPage from './komponente/RegisterPage';
 import AdminDashboard from './komponente/AdminDashboard';
 import Poruke from './komponente/Poruke';
 import DodajLiniju from './komponente/DodajLiniju';
+import IzmeniLiniju from './komponente/IzmeniLiniju';
 
 
 const axiosInstance = axios.create({
@@ -135,6 +136,7 @@ function addToken(auth_token){
           <Route path="/admin" element={<AdminDashboard linije={linije}></AdminDashboard>} />
           <Route path="/admin/poruke" element={<Poruke poruke={poruke}></Poruke>} />
           <Route path="/admin/dodajLiniju" element={<DodajLiniju destinacije={destinacije}> </DodajLiniju>} />
+          <Route path="/admin/izmeniLiniju" element={<IzmeniLiniju destinacije={destinacije}> </IzmeniLiniju>} />
 
         </Routes>
        
