@@ -21,6 +21,7 @@ class LinijaSeeder extends Seeder
             $l1->zavrsnaDestinacija=1;
             $l1->zona=1;
             $l1->tipLinije=1;
+            $l1->interval =5 ;
             $l1->save();
 
             $l2=new Linija();
@@ -30,6 +31,8 @@ class LinijaSeeder extends Seeder
             $l2->zavrsnaDestinacija=8;
             $l2->zona=1;
             $l2->tipLinije=1;
+            $l2->interval =7 ;
+
             $l2->save();
 
             $l3=new Linija();
@@ -39,6 +42,8 @@ class LinijaSeeder extends Seeder
             $l3->zavrsnaDestinacija=11;
             $l3->zona=1;
             $l3->tipLinije=1;
+            $l3->interval =25 ;
+
             $l3->save();
 
             $l4=new Linija();
@@ -48,6 +53,8 @@ class LinijaSeeder extends Seeder
             $l4->zavrsnaDestinacija=12;
             $l4->zona=1;
             $l4->tipLinije=1;
+            $l4->interval =19 ;
+
             $l4->save();
 
 
@@ -58,6 +65,8 @@ class LinijaSeeder extends Seeder
             $l5->zavrsnaDestinacija=5;
             $l5->zona=2;
             $l5->tipLinije=1;
+            $l5->interval =15 ;
+
             $l5->save();
 
 
