@@ -152,7 +152,15 @@ function izbaciIzOmiljenih(id){
 
 function dodeliID(id){
   console.log(id)
-    setID(id)
+
+    
+    linije.forEach((l)=>{
+      if(l.id==id){
+        l.omiljena=1;
+        setID(l)
+        
+      }
+    })
 }
 function addToken(auth_token){
   setToken(auth_token);
@@ -171,7 +179,7 @@ function addToken(auth_token){
           <Route path="/" element={<Pocetna></Pocetna>} />
           <Route path="/kontakt" element={<Kontakt></Kontakt>} />
           <Route path="/linije" element={<Linije linije={linije} dodajOmiljenu={dodajOmiljenu} dodeliID={dodeliID} ></Linije>} />
-          <Route path="/linije/*" element={<Linija id={id}></Linija>} />
+          <Route path="/linije/*" element={<Linija linija={id}></Linija>} />
           
           <Route path="/omiljene" element={<Omiljene linije={linije} brojOmiljenih={brojOmiljenihLinija} izbaciIzOmiljenih={izbaciIzOmiljenih}  dodeliID={dodeliID}>  </Omiljene>} />
           <Route path="/login" element={<LoginPage addToken={addToken}></LoginPage>} />

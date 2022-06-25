@@ -23,7 +23,9 @@ class LinijaResource extends JsonResource
             'pocetnaDestinacija'=> new DestinacijaResource(Destinacija::find($this->resource->pocetnaDestinacija)),
             'zavrsnaDestinacija'=>new DestinacijaResource(Destinacija::find($this->resource->zavrsnaDestinacija)),
             'zona'=>  $this->resource->zona,
-            'tipLinije'=>TipLinije::find($this->resource->tipLinije)
+            'tipLinije'=>TipLinije::find($this->resource->tipLinije),
+            'interval'=>  $this->resource->interval,
+
         ];
     }
 }
