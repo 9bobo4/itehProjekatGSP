@@ -241,18 +241,18 @@ body, html {
   }
 
   table {
-    font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    border: 1px solid #050505;
-  }
+}
   
-  td, th {
-    border: 1px solid #050505;
+th, td {
     text-align: left;
     padding: 8px;
-     
-  }
+}
+  
+tr:nth-child(even) {
+    background-color: rgb(159, 161, 159);
+}
   .kontakt{
     background-color: #444442;
   }
@@ -270,4 +270,14 @@ body, html {
     grid-template-columns: 1fr 1fr  ;
     gap: 30px;
     margin: 20px 0;
+  }
+
+  .cenovnik{
+    padding: 7%;
+  }
+
+  .linija{
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 3%;
   }

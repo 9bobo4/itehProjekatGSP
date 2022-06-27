@@ -34,15 +34,16 @@ Route::post('kontakt', [PorukaController::class, 'primiPoruku']);   //ulogovan i
 Route::get('dolazak', [DolazakController::class, 'index']);
 
 
-
-
+Route::get('linije', [LinijaController::class, 'index']);
+Route::get('linije/{id}', [LinijaController::class, 'show']);
+Route::put('linije/{id}', [LinijaController::class, 'update']);
+Route::delete('linije/{id}', [LinijaController::class, 'destroy']);
 Route::group(['middleware' => ['auth:sanctum']], function () {  //obicni ulogovani korisnici
     Route::get('/profiles', function (Request $request) { //ovo nam omogucava da prikazemo ulogovanog korisnika
         return auth()->user();
     });
 
-    Route::get('linije', [LinijaController::class, 'index']);
-    Route::get('linije/{id}', [LinijaController::class, 'show']);
+
    
 
     Route::post('/logout', [AuthController::class, 'logout']); //ako je korisnik ulogovan moze da se odjavi
@@ -56,7 +57,6 @@ Route::middleware(['auth:sanctum','isAPIAdmin'])->group(function(){ //ako je ulo
         return response()->json(['message'=>'You are in','status'=>200],200);
     });
     Route::post('linije/', [LinijaController::class, 'store']);
-    Route::put('linije/{id}', [LinijaController::class, 'update']);
-    Route::delete('linije/{id}', [LinijaController::class, 'destroy']);
+
     
 });
