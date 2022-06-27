@@ -15,7 +15,7 @@ import AdminDashboard from './komponente/AdminDashboard';
 import Poruke from './komponente/Poruke';
 import DodajLiniju from './komponente/DodajLiniju';
 import IzmeniLiniju from './komponente/IzmeniLiniju';
-import RedVoznje from './komponente/RedVoznje';
+
 import Linija from './komponente/Linija';
 import KupiKarte from './komponente/KupiKarte';
 
@@ -152,12 +152,11 @@ function izbaciIzOmiljenih(id){
 
 
 function dodeliID(id){
-  console.log(id)
-
+ 
     
     linije.forEach((l)=>{
       if(l.id==id){
-        l.omiljena=1;
+        
         setID(l)
         
       }
@@ -187,7 +186,7 @@ function addToken(auth_token){
           <Route path="/omiljene" element={<Omiljene linije={linije} brojOmiljenih={brojOmiljenihLinija} izbaciIzOmiljenih={izbaciIzOmiljenih}  dodeliID={dodeliID}>  </Omiljene>} />
           <Route path="/login" element={<LoginPage addToken={addToken}></LoginPage>} />
           <Route path="/register" element={<RegisterPage></RegisterPage>} />
-          <Route path="/redVoznje" element={<RedVoznje linije = {linije} dolasci={dolasci}></RedVoznje>} />
+          
 
           <Route path="/admin" element={<AdminDashboard linije={linije}></AdminDashboard>} />
           <Route path="/admin/poruke" element={<Poruke poruke={poruke}></Poruke>} />

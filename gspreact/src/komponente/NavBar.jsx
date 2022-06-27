@@ -67,7 +67,7 @@ function NavBar({token}) {
                              
                     <Link to="/linije">Linije</Link>
                     <Link to="/omiljene">Omiljene</Link>
-                    <Link to="/redVoznje">Red voznje</Link>
+                      
 
                   
                    </>

@@ -4,9 +4,6 @@ import {FaBus} from "react-icons/fa"
 import MyMapComponent from './MyMapComponent';
  
  
-const axiosInstance = axios.create({
-    baseURL: process.env.REACT_APP_API_URL,
-  });
 function Linija({linija}) {  
  
     console.log(linija)
